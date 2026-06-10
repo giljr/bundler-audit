@@ -1,0 +1,372 @@
+Updating ruby-advisory-db ...
+Already up to date.
+Updated ruby-advisory-db
+ruby-advisory-db:
+  advisories:	1007 advisories
+  last updated:	2025-08-15 09:06:14 -0700
+  commit:	38d5d62f8c2325f3c5b980dc2f7774f8abbc589c
+Name: activerecord
+Version: 8.0.1
+CVE: CVE-2025-55193
+GHSA: GHSA-76r7-hhxj-r776
+Criticality: Unknown
+URL: https://github.com/rails/rails/security/advisories/GHSA-76r7-hhxj-r776
+Title: Active Record logging vulnerable to ANSI escape injection
+Solution: update to '~> 7.1.5.2', '~> 7.2.2.2', '>= 8.0.2.1'
+
+Name: activestorage
+Version: 8.0.1
+CVE: CVE-2025-24293
+GHSA: GHSA-r4mg-4433-c7g3
+Criticality: Unknown
+URL: https://github.com/rails/rails/security/advisories/GHSA-r4mg-4433-c7g3
+Title: Active Storage allowed transformation methods that were potentially unsafe
+Solution: update to '~> 7.1.5.2', '~> 7.2.2.2', '>= 8.0.2.1'
+
+Name: net-imap
+Version: 0.5.5
+CVE: CVE-2025-25186
+GHSA: GHSA-7fc5-f82f-cx69
+Criticality: Medium
+URL: https://github.com/ruby/net-imap/security/advisories/GHSA-7fc5-f82f-cx69
+Title: Possible DoS by memory exhaustion in net-imap
+Solution: update to '~> 0.3.8', '~> 0.4.19', '>= 0.5.6'
+
+Name: net-imap
+Version: 0.5.5
+CVE: CVE-2025-43857
+GHSA: GHSA-j3g3-5qv5-52mj
+Criticality: Unknown
+URL: https://github.com/ruby/net-imap/security/advisories/GHSA-j3g3-5qv5-52mj
+Title: net-imap rubygem vulnerable to possible DoS by memory exhaustion
+Solution: update to '~> 0.2.5', '~> 0.3.9', '~> 0.4.20', '>= 0.5.7'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-353f-x4gh-cqq8
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-353f-x4gh-cqq8
+Title: Nokogiri patches vendored libxml2 to resolve multiple CVEs
+Solution: update to '>= 1.18.9'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-5w6v-399v-w3cc
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-5w6v-399v-w3cc
+Title: Nokogiri updates packaged libxml2 to v2.13.8 to resolve CVE-2025-32414 and CVE-2025-32415
+Solution: update to '>= 1.18.8'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-mrxw-mxhj-p664
+Criticality: High
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-mrxw-mxhj-p664
+Title: Nokogiri updates packaged libxslt to v1.1.43 to resolve multiple CVEs
+Solution: update to '>= 1.18.4'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-vvfq-8hwr-qm4m
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-vvfq-8hwr-qm4m
+Title: Nokogiri updates packaged libxml2 to 2.13.6 to resolve CVE-2025-24928 and CVE-2024-56171
+Solution: update to '>= 1.18.3'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-353f-x4gh-cqq8
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-353f-x4gh-cqq8
+Title: Nokogiri patches vendored libxml2 to resolve multiple CVEs
+Solution: update to '>= 1.18.9'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-5w6v-399v-w3cc
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-5w6v-399v-w3cc
+Title: Nokogiri updates packaged libxml2 to v2.13.8 to resolve CVE-2025-32414 and CVE-2025-32415
+Solution: update to '>= 1.18.8'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-mrxw-mxhj-p664
+Criticality: High
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-mrxw-mxhj-p664
+Title: Nokogiri updates packaged libxslt to v1.1.43 to resolve multiple CVEs
+Solution: update to '>= 1.18.4'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-vvfq-8hwr-qm4m
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-vvfq-8hwr-qm4m
+Title: Nokogiri updates packaged libxml2 to 2.13.6 to resolve CVE-2025-24928 and CVE-2024-56171
+Solution: update to '>= 1.18.3'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-353f-x4gh-cqq8
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-353f-x4gh-cqq8
+Title: Nokogiri patches vendored libxml2 to resolve multiple CVEs
+Solution: update to '>= 1.18.9'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-5w6v-399v-w3cc
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-5w6v-399v-w3cc
+Title: Nokogiri updates packaged libxml2 to v2.13.8 to resolve CVE-2025-32414 and CVE-2025-32415
+Solution: update to '>= 1.18.8'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-mrxw-mxhj-p664
+Criticality: High
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-mrxw-mxhj-p664
+Title: Nokogiri updates packaged libxslt to v1.1.43 to resolve multiple CVEs
+Solution: update to '>= 1.18.4'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-vvfq-8hwr-qm4m
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-vvfq-8hwr-qm4m
+Title: Nokogiri updates packaged libxml2 to 2.13.6 to resolve CVE-2025-24928 and CVE-2024-56171
+Solution: update to '>= 1.18.3'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-353f-x4gh-cqq8
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-353f-x4gh-cqq8
+Title: Nokogiri patches vendored libxml2 to resolve multiple CVEs
+Solution: update to '>= 1.18.9'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-5w6v-399v-w3cc
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-5w6v-399v-w3cc
+Title: Nokogiri updates packaged libxml2 to v2.13.8 to resolve CVE-2025-32414 and CVE-2025-32415
+Solution: update to '>= 1.18.8'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-mrxw-mxhj-p664
+Criticality: High
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-mrxw-mxhj-p664
+Title: Nokogiri updates packaged libxslt to v1.1.43 to resolve multiple CVEs
+Solution: update to '>= 1.18.4'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-vvfq-8hwr-qm4m
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-vvfq-8hwr-qm4m
+Title: Nokogiri updates packaged libxml2 to 2.13.6 to resolve CVE-2025-24928 and CVE-2024-56171
+Solution: update to '>= 1.18.3'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-353f-x4gh-cqq8
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-353f-x4gh-cqq8
+Title: Nokogiri patches vendored libxml2 to resolve multiple CVEs
+Solution: update to '>= 1.18.9'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-5w6v-399v-w3cc
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-5w6v-399v-w3cc
+Title: Nokogiri updates packaged libxml2 to v2.13.8 to resolve CVE-2025-32414 and CVE-2025-32415
+Solution: update to '>= 1.18.8'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-mrxw-mxhj-p664
+Criticality: High
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-mrxw-mxhj-p664
+Title: Nokogiri updates packaged libxslt to v1.1.43 to resolve multiple CVEs
+Solution: update to '>= 1.18.4'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-vvfq-8hwr-qm4m
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-vvfq-8hwr-qm4m
+Title: Nokogiri updates packaged libxml2 to 2.13.6 to resolve CVE-2025-24928 and CVE-2024-56171
+Solution: update to '>= 1.18.3'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-353f-x4gh-cqq8
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-353f-x4gh-cqq8
+Title: Nokogiri patches vendored libxml2 to resolve multiple CVEs
+Solution: update to '>= 1.18.9'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-5w6v-399v-w3cc
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-5w6v-399v-w3cc
+Title: Nokogiri updates packaged libxml2 to v2.13.8 to resolve CVE-2025-32414 and CVE-2025-32415
+Solution: update to '>= 1.18.8'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-mrxw-mxhj-p664
+Criticality: High
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-mrxw-mxhj-p664
+Title: Nokogiri updates packaged libxslt to v1.1.43 to resolve multiple CVEs
+Solution: update to '>= 1.18.4'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-vvfq-8hwr-qm4m
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-vvfq-8hwr-qm4m
+Title: Nokogiri updates packaged libxml2 to 2.13.6 to resolve CVE-2025-24928 and CVE-2024-56171
+Solution: update to '>= 1.18.3'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-353f-x4gh-cqq8
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-353f-x4gh-cqq8
+Title: Nokogiri patches vendored libxml2 to resolve multiple CVEs
+Solution: update to '>= 1.18.9'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-5w6v-399v-w3cc
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-5w6v-399v-w3cc
+Title: Nokogiri updates packaged libxml2 to v2.13.8 to resolve CVE-2025-32414 and CVE-2025-32415
+Solution: update to '>= 1.18.8'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-mrxw-mxhj-p664
+Criticality: High
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-mrxw-mxhj-p664
+Title: Nokogiri updates packaged libxslt to v1.1.43 to resolve multiple CVEs
+Solution: update to '>= 1.18.4'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-vvfq-8hwr-qm4m
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-vvfq-8hwr-qm4m
+Title: Nokogiri updates packaged libxml2 to 2.13.6 to resolve CVE-2025-24928 and CVE-2024-56171
+Solution: update to '>= 1.18.3'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-353f-x4gh-cqq8
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-353f-x4gh-cqq8
+Title: Nokogiri patches vendored libxml2 to resolve multiple CVEs
+Solution: update to '>= 1.18.9'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-5w6v-399v-w3cc
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-5w6v-399v-w3cc
+Title: Nokogiri updates packaged libxml2 to v2.13.8 to resolve CVE-2025-32414 and CVE-2025-32415
+Solution: update to '>= 1.18.8'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-mrxw-mxhj-p664
+Criticality: High
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-mrxw-mxhj-p664
+Title: Nokogiri updates packaged libxslt to v1.1.43 to resolve multiple CVEs
+Solution: update to '>= 1.18.4'
+
+Name: nokogiri
+Version: 1.18.1
+GHSA: GHSA-vvfq-8hwr-qm4m
+Criticality: Unknown
+URL: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-vvfq-8hwr-qm4m
+Title: Nokogiri updates packaged libxml2 to 2.13.6 to resolve CVE-2025-24928 and CVE-2024-56171
+Solution: update to '>= 1.18.3'
+
+Name: rack
+Version: 3.1.8
+CVE: CVE-2025-25184
+GHSA: GHSA-7g2v-jj9q-g3rg
+Criticality: Unknown
+URL: https://github.com/rack/rack/security/advisories/GHSA-7g2v-jj9q-g3rg
+Title: Possible Log Injection in Rack::CommonLogger
+Solution: update to '~> 2.2.11', '~> 3.0.12', '>= 3.1.10'
+
+Name: rack
+Version: 3.1.8
+CVE: CVE-2025-27111
+GHSA: GHSA-8cgq-6mh2-7j6v
+Criticality: Unknown
+URL: https://github.com/rack/rack/security/advisories/GHSA-8cgq-6mh2-7j6v
+Title: Escape Sequence Injection vulnerability in Rack lead to Possible Log Injection
+Solution: update to '~> 2.2.12', '~> 3.0.13', '>= 3.1.11'
+
+Name: rack
+Version: 3.1.8
+CVE: CVE-2025-27610
+GHSA: GHSA-7wqh-767x-r66v
+Criticality: High
+URL: https://github.com/rack/rack/security/advisories/GHSA-7wqh-767x-r66v
+Title: Local File Inclusion in Rack::Static
+Solution: update to '~> 2.2.13', '~> 3.0.14', '>= 3.1.12'
+
+Name: rack
+Version: 3.1.8
+CVE: CVE-2025-46727
+GHSA: GHSA-gjh7-p2fx-99vx
+Criticality: High
+URL: https://github.com/rack/rack/security/advisories/GHSA-gjh7-p2fx-99vx
+Title: Rack has an Unbounded-Parameter DoS in Rack::QueryParser
+Solution: update to '~> 2.2.14', '~> 3.0.16', '>= 3.1.14'
+
+Name: rack
+Version: 3.1.8
+CVE: CVE-2025-49007
+GHSA: GHSA-47m2-26rw-j2jw
+Criticality: Unknown
+URL: https://github.com/rack/rack/security/advisories/GHSA-47m2-26rw-j2jw
+Title: ReDoS Vulnerability in Rack::Multipart handle_mime_head
+Solution: update to '>= 3.1.16'
+
+Name: rack-session
+Version: 2.1.0
+CVE: CVE-2025-46336
+GHSA: GHSA-9j94-67jr-4cqj
+Criticality: Medium
+URL: https://github.com/rack/rack-session/security/advisories/GHSA-9j94-67jr-4cqj
+Title: Rack session gets restored after deletion
+Solution: update to '>= 2.1.1'
+
+Name: thor
+Version: 1.3.2
+CVE: CVE-2025-54314
+GHSA: GHSA-mqcp-p2hv-vw6x
+Criticality: Low
+URL: https://github.com/advisories/GHSA-mqcp-p2hv-vw6x
+Title: Thor can construct an unsafe shell command from library input.
+Solution: update to '>= 1.4.0'
+
+Name: uri
+Version: 1.0.2
+CVE: CVE-2025-27221
+GHSA: GHSA-22h5-pq3x-2gf2
+Criticality: Low
+URL: https://www.cve.org/CVERecord?id=CVE-2025-27221
+Title: CVE-2025-27221 - userinfo leakage in URI#join, URI#merge and URI#+.
+Solution: update to '~> 0.11.3', '~> 0.12.4', '~> 0.13.2', '>= 1.0.3'
+
+Vulnerabilities found!

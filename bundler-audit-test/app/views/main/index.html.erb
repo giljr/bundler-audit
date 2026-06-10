@@ -1,0 +1,20 @@
+<div class="d-flex align-items-center justify-content-center">
+  <h1>Welcome to QA Test!</h1>
+</div>
+
+<% if Current.user.nil? %>
+  <p>Please Sign Up or Sign In first!</p>
+  <%= button_to "Sign Up", sign_up_path, method: :get, class: "btn btn-primary" %>
+  <br>
+  <%= button_to "Sign In", sign_in_path, method: :get, class: "btn btn-primary" %>
+<% else %>
+   <p>
+    <strong>Logged in as:</strong>
+    <%= Current.user.email %>
+  </p>
+  <p>
+    <strong>The last time the user record was updated:</strong>
+    <%= time_tag Current.user.updated_at, "data-local": "time", "data-format": "%B %e, %Y %l:%M %P" %>
+  </p>
+  <%= button_to "Sign Out", sign_out_path, method: :delete, class: "btn btn-primary" %>
+<% end %>

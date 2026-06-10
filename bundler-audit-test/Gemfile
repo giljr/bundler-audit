@@ -1,0 +1,82 @@
+source 'https://rubygems.org'
+
+# Framework principal
+gem 'rails', '~> 8.0.1'
+
+# Pipeline de assets moderno
+gem 'propshaft'
+
+# Banco de dados padrão (SQLite)
+gem 'sqlite3', '>= 2.1'
+
+# Servidor web Puma
+gem 'puma', '>= 5.0'
+
+# Suporte a JavaScript com Import Maps
+gem 'importmap-rails'
+
+# Hotwire (Turbo + Stimulus)
+gem 'turbo-rails'
+gem 'stimulus-rails'
+
+# Geração de APIs em JSON
+gem 'jbuilder'
+
+# Autenticação com has_secure_password
+gem 'bcrypt', '~> 3.1.7'
+
+# Suporte a timezone em Windows/JRuby
+gem 'tzinfo-data', platforms: %i[windows jruby]
+
+# Adaptadores de cache, fila e WebSockets
+gem 'solid_cache'
+gem 'solid_queue'
+gem 'solid_cable'
+
+# Boot mais rápido (cache de require)
+gem 'bootsnap', require: false
+
+# Deploy simplificado com Docker/Kamal
+gem 'kamal', require: false
+
+# Performance extra no Puma
+gem 'thruster', require: false
+
+# Upload e processamento de imagens (opcional)
+# gem "image_processing", "~> 1.2"
+
+# ----------------------------------------
+# Grupos de ambientes
+# ----------------------------------------
+
+group :development, :test do
+  # Debugging em tempo de execução
+  gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
+
+  # Auditoria de vulnerabilidades nas dependências
+  gem 'bundler-audit', require: false
+
+  # Análise estática de segurança
+  gem 'brakeman', require: false
+
+  # Estilo Ruby oficial da comunidade Rails
+  gem 'rubocop-rails-omakase', require: false
+
+  # for nicer output - Very close to RSpec style
+  gem 'minitest-reporters'
+
+  # For system tests
+  # gem "capybara"
+  # gem "selenium-webdriver" # necessário se você usar browsers reais
+
+  # Don’t automatically require this gem. I’ll require it manually if/when I need it
+  # rubycritic is a development/analysis tool, not something you need loaded when your Rails app boots.
+  # You don’t want Rails wasting time loading it every time you start the server or console.
+  # Instead, you’ll run it manually in the terminal: bundle exec rubycritic
+  gem 'rubycritic', require: false
+end
+
+group :development do
+  # Console interativo em páginas de erro
+  gem 'web-console'
+end

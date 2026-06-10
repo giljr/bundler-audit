@@ -1,0 +1,137 @@
+#----------------------------------------------------
+#                       Stages
+#----------------------------------------------------
+stages:
+  - audit
+  - quality
+  - test
+  - release
+
+#----------------------------------------------------
+#                  Audit Stage
+#----------------------------------------------------
+
+# Bundler Audit
+bundler-audit:
+  stage: audit
+  image: ruby:3.3
+  script:
+    - gem install bundler-audit
+    - bundle install --jobs=4 --retry=3
+    - mkdir -p tmp
+    - bundle audit check --update 2>&1 | tee tmp/bundle-audit.log || true
+  artifacts:
+    paths:
+      - tmp/bundle-audit.log
+    when: always
+    expire_in: 7 days
+  allow_failure: false
+  tags:
+    - dev
+
+#----------------------------
+# Brakeman job
+#----------------------------
+
+brakeman:
+  stage: audit
+  image: ruby:3.3
+  script:
+    - gem install brakeman
+    - bundle install --jobs=4 --retry=3
+    - mkdir -p tmp
+    - brakeman -q -o tmp/brakeman_report.html --ignore-config .brakeman.ignore --no-exit-on-warn
+  artifacts:
+    paths:
+      - tmp/brakeman_report.html
+    when: always
+    expire_in: 7 days
+  allow_failure: false
+  tags:
+    - dev
+
+#----------------------------
+# RubyCritic job
+#----------------------------
+rubycritic:
+  stage: quality
+  image: ruby:3.3
+  before_script:
+    - gem install bundler -v 2.4.16
+  script:
+    - bundle install --jobs=4 --retry=3
+    - gem install rubycritic
+    - mkdir -p analysis_report
+    - bundle exec rubycritic --no-browser --format html --path analysis_report --minimum-score 75
+  artifacts:
+    paths:
+      - analysis_report/
+    when: always
+    expire_in: 7 days
+  allow_failure: false
+
+#----------------------------
+# RuboCop job
+#----------------------------
+rubocop:
+  stage: quality
+  image: ruby:3.3
+  before_script:
+    - gem install bundler -v 2.4.16
+  script:
+    - bundle install --jobs=4 --retry=3
+    - gem install rubocop rubocop-rails
+    - mkdir -p tmp
+    - rubocop --format offenses --format html --out tmp/rubocop_report.html || true
+    - rubocop --format clang --out tmp/rubocop_report.txt || true
+  artifacts:
+    paths:
+      - tmp/rubocop_report.html
+      - tmp/rubocop_report.txt
+    when: always
+    expire_in: 7 days
+  allow_failure: false
+
+
+#----------------------------------------------------
+# Minitest Job
+#----------------------------------------------------
+test:minitest:
+  stage: test
+  image: ruby:3.3
+  script:
+    - bundle install --jobs=4 --retry=3
+    - mkdir -p tmp
+    - |
+      bundle exec rails test -v 2>&1 | tee tmp/test.log
+      test ${PIPESTATUS[0]} -eq 0
+  artifacts:
+    paths:
+      - tmp/test.log
+    when: always
+    expire_in: 7 days
+  allow_failure: false
+  tags:
+    - dev
+
+#----------------------------------------------------
+#                   Release Stage
+#----------------------------------------------------
+release:
+  stage: release
+  image: $HARBOR_REGISTRY/adm/semantic-release:node-22.11.1-alpine3.19
+  before_script:
+    - mkdir -p output
+  script:
+    - semantic-release
+    - VERSION=$(git describe --abbrev=0 --tags | tr -d v)
+    - echo "VERSION=$VERSION" > output/version.env
+    - echo "VERSION=$VERSION"
+  artifacts:
+    paths:
+      - output/
+  only:
+    - main
+    - master
+  tags:
+    - dev

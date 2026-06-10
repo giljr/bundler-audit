@@ -1,0 +1,21 @@
+<h1>Sign Up</h1>
+
+  <%= form_with model: @user, url: sign_up_path, method:"post", data: {turbo:"false"} do |form| %>
+  <%= render "shared/form_errors" , form: form %>
+  <div class="mb-3">
+    <%= form.label :email, "Email address", class: "form-label" %>
+    <%= form.text_field :email, class: "form-control" %>
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <%= form.label :password, "Password", class: "form-label" %>
+    <%= form.password_field :password, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :password_confirmation, "Password Confirmation", class: "form-label" %>
+    <%= form.password_field :password_confirmation, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

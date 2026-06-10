@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+valid_user:
+  email: valid_user@example.com
+  password_digest: <%= BCrypt::Password.create('password') %>
+
+another_user:
+  email: another_user@example.com
+  password_digest: <%= BCrypt::Password.create('secret123') %>
+
+invalid_user:
+  email: ""                     # missing email
+  password_digest: <%= BCrypt::Password.create('') %>  # empty password
+
+no_password_user:
+  email: nopassword@example.com
+  password_digest: ""           # no password set
