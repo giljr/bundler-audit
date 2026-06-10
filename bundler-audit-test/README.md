@@ -11,8 +11,9 @@ Audite as gems deste projeto com bundler-audit
 ```
 A Skill executará a análise na raiz do projeto e apresentará um relatório com possíveis vulnerabilidades e recomendações de atualização das gems afetadas.
 
-[SKILL.md](bundler-audit-test/docs/skill.md)
-[Rodando no vera!](bundler-audit-test/docs/radando_no_vera.txt) 
+[SKILL.md](docs/skill.md)
+[Rodando no vera!](docs/radando_no_vera.txt) 
+
 ### O que vamos fazer
 Pegar o `SKILL.md` que você salvou no VS Code e instalar no Claude como uma skill real, funcionando em claude.ai (web/desktop).
 
