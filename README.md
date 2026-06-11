@@ -27,8 +27,11 @@ Os próximos estudos serão conduzidos no **Codex** e abordarão outras ferramen
 ## Estrutura
 
 ```
-bundler-audit-test/
+claude/
 └── SKILL.md    ← skill de auditoria de gems com bundler-audit
+└── Proj 1
+└── Proj 2
+└── ...
 ```
 
 ---
