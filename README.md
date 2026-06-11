@@ -1,39 +1,41 @@
-# Estudos com Skills — Claude Code
+# Claude Code Skills Studies
 
-Este repositório documenta estudos práticos sobre o uso de **skills** no Claude Code.
+This repository documents practical studies on the use of **Skills** in Claude Code.
 
-O objetivo é explorar como skills personalizadas podem automatizar e padronizar fluxos de análise de qualidade e segurança em projetos Ruby/Rails.
-
----
-
-## Estudo atual — bundler-audit
-
-A primeira skill em estudo é a **bundler-audit**, focada em segurança de dependências.
-
-Ela cobre o fluxo completo de auditoria de gems: instalação, atualização do banco de vulnerabilidades, interpretação de CVEs e GHSAs, e estratégias de atualização segura para ambientes de produção.
+The goal is to explore how custom Skills can automate and standardize quality assurance and security analysis workflows for Ruby and Rails projects.
 
 ---
 
-## Próximos estudos
+## Current Study — bundler-audit
 
-Os próximos estudos serão conduzidos no **Codex** e abordarão outras ferramentas do ecossistema Ruby/Rails:
+The first Skill under study is **bundler-audit**, focused on dependency security.
 
-- **Brakeman** — análise estática de segurança para aplicações Rails
-- **RuboCop** — linting e enforçamento de estilo de código Ruby
-- outras ferramentas a definir conforme o andamento dos estudos
+It covers the complete gem auditing workflow, including installation, vulnerability database updates, CVE and GHSA analysis, and safe upgrade strategies for production environments.
 
 ---
 
-## Estrutura
+## Upcoming Studies
 
-```
+Future studies will be conducted using **Codex** and will explore additional tools from the Ruby/Rails ecosystem:
+
+* **Brakeman** — static security analysis for Rails applications
+* **RuboCop** — Ruby linting and code style enforcement
+* Additional tools to be defined as the research progresses
+
+---
+
+## Repository Structure
+
+```text
 claude/
-└── SKILL.md    ← skill de auditoria de gems com bundler-audit
-└── Proj 1
-└── Proj 2
+├── SKILL.md      ← Gem auditing Skill using bundler-audit
+├── Project 1
+├── Project 2
 └── ...
 ```
 
 ---
 
-*Estudo iniciado em junho de 2026.*
+## Notes
+
+This study series began in June 2026 and serves as an ongoing exploration of AI-assisted development workflows using Claude Code Skills.
