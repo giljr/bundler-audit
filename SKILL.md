@@ -1,26 +1,26 @@
 ---
 name: bundler-audit
 description: >
-  Guia completo para instalar, configurar e executar o bundler-audit em projetos Ruby/Rails.
-  Use esta skill sempre que o usuário mencionar bundler-audit, auditoria de gems, vulnerabilidades
-  em gems Ruby, CVEs em dependências, atualização segura de gems, ou quiser garantir segurança
-  nas dependências de um projeto Rails. Também acione para análise de resultados do bundler-audit,
-  interpretação de CVEs/GHSA, e estratégias de atualização segura em produção.
+  Complete guide to installing, configuring, and running bundler-audit in Ruby/Rails projects.
+  Use this skill whenever the user mentions bundler-audit, gem auditing, vulnerabilities
+  in Ruby gems, dependency CVEs, secure gem updates, or wants to ensure security
+  in a Rails project's dependencies. Also trigger for bundler-audit result analysis,
+  CVE/GHSA interpretation, and safe production update strategies.
 ---
 
-# bundler-audit — Auditoria de Segurança para Gems Ruby
+# bundler-audit — Security Auditing for Ruby Gems
 
-## O que é o bundler-audit?
+## What is bundler-audit?
 
-O `bundler-audit` é uma ferramenta que verifica o `Gemfile.lock` do projeto contra um banco de dados de vulnerabilidades conhecidas (CVEs e GHSAs), identificando gems com falhas de segurança e recomendando versões seguras.
+`bundler-audit` is a tool that checks a project's `Gemfile.lock` against a database of known vulnerabilities (CVEs and GHSAs), identifying gems with security issues and recommending safe versions.
 
 ---
 
-## Instalação passo a passo
+## Step-by-Step Installation
 
-### 1. Adicionar ao Gemfile
+### 1. Add it to the Gemfile
 
-Adicione apenas no grupo de desenvolvimento — não é necessário em produção:
+Add it only to the development group — it is not required in production:
 
 ```ruby
 group :development do
@@ -28,51 +28,51 @@ group :development do
 end
 ```
 
-### 2. Instalar as gems do projeto
+### 2. Install project gems
 
 ```bash
 bundle install
 ```
 
-### 3. Atualizar o banco de dados de vulnerabilidades
+### 3. Update the vulnerability database
 
-O bundler-audit mantém uma cópia local do banco de advisories. Sempre atualize antes de auditar:
+bundler-audit maintains a local copy of the advisory database. Always update it before auditing:
 
 ```bash
 bundle exec bundler-audit update
 ```
 
-> O banco contém centenas de advisories (ex.: 1007 advisories, atualizado em 2025-08-15).
+> The database contains hundreds of advisories (e.g., 1007 advisories, updated on 2025-08-15).
 
-### 4. Executar a auditoria
+### 4. Run the audit
 
 ```bash
 bundle exec bundler-audit check --update
 ```
 
-A flag `--update` garante que o banco seja atualizado automaticamente antes de checar.
+The `--update` flag ensures the database is automatically updated before the scan.
 
 ---
 
-## Interpretando os resultados
+## Interpreting Results
 
-O bundler-audit reporta cada gem vulnerável com:
+bundler-audit reports each vulnerable gem with:
 
-| Campo | Descrição |
+| Field | Description |
 |---|---|
-| **Gem** | Nome da gem afetada |
-| **Version** | Versão atualmente instalada |
-| **Advisory** | Identificador CVE ou GHSA |
-| **Criticality** | Nível: Unknown / Low / Medium / High / Critical |
-| **Title** | Descrição resumida da vulnerabilidade |
-| **Solution** | Versão segura recomendada |
+| **Gem** | Name of the affected gem |
+| **Version** | Currently installed version |
+| **Advisory** | CVE or GHSA identifier |
+| **Criticality** | Severity level: Unknown / Low / Medium / High / Critical |
+| **Title** | Short vulnerability description |
+| **Solution** | Recommended safe version |
 
-**Resultado limpo:**
+**Clean result:**
 ```
 No vulnerabilities found
 ```
 
-**Resultado com vulnerabilidade (exemplo):**
+**Vulnerability found (example):**
 ```
 Name: rack
 Version: 3.1.8
@@ -84,87 +84,87 @@ Solution: upgrade to >= 3.1.16
 
 ---
 
-## Estratégia de atualização segura
+## Safe Update Strategy
 
-### Ambiente de desenvolvimento / staging
+### Development / Staging Environment
 
-Pode-se atualizar todas as gems vulneráveis de uma vez:
+You can update all vulnerable gems at once:
 
 ```bash
 bundle update nokogiri rack net-imap activerecord activestorage rack-session thor uri
 ```
 
-### Ambiente de produção (recomendado: atualização gradual)
+### Production Environment (Recommended: Gradual Updates)
 
-> ⚠️ **Atenção:** Em produção, atualize gem a gem, executando os testes a cada passo.
+> ⚠️ **Warning:** In production, update one gem at a time and run tests after each update.
 
 ```bash
-# 1. Atualizar uma gem por vez
+# 1. Update a single gem
 bundle update rack
 
-# 2. Rodar testes da aplicação
+# 2. Run application tests
 rails test -v
 
-# 3. Verificar se o bundler-audit está satisfeito com essa gem
+# 3. Verify bundler-audit is satisfied with the updated gem
 bundle exec bundler-audit check
 
-# 4. Repetir para a próxima gem
+# 4. Repeat for the next gem
 ```
 
-### Atualizar todas as gems do sistema (opcional)
+### Update All System Gems (Optional)
 
 ```bash
 gem update
 ```
 
-> Use com cautela — pode causar quebras de compatibilidade em projetos que não gerenciam versões explicitamente.
+> Use with caution — this may introduce compatibility issues in projects that do not explicitly manage gem versions.
 
 ---
 
-## Exemplos de vulnerabilidades comuns (referência)
+## Common Vulnerabilities (Reference)
 
-| Gem | CVEs frequentes | Tipo de risco |
+| Gem | Common CVEs | Risk Type |
 |---|---|---|
-| `nokogiri` | GHSA-mrxw-mxhj-p664 | Problemas em libxml2/libxslt |
+| `nokogiri` | GHSA-mrxw-mxhj-p664 | libxml2/libxslt issues |
 | `rack` | CVE-2025-25184, 27610 | Log injection, LFI, DoS, ReDoS |
-| `net-imap` | CVE-2025-25186 | DoS por exaustão de memória |
-| `activerecord` | CVE-2025-55193 | ANSI escape injection em logs |
-| `activestorage` | CVE-2025-24293 | Transformações potencialmente inseguras |
-| `rack-session` | CVE-2025-46336 | Sessão restaurada após exclusão |
-| `thor` | CVE-2025-54314 | Injeção via shell input |
-| `uri` | CVE-2025-27221 | Vazamento de userinfo em URI join/merge |
+| `net-imap` | CVE-2025-25186 | Memory exhaustion DoS |
+| `activerecord` | CVE-2025-55193 | ANSI escape injection in logs |
+| `activestorage` | CVE-2025-24293 | Potentially unsafe transformations |
+| `rack-session` | CVE-2025-46336 | Session restoration after deletion |
+| `thor` | CVE-2025-54314 | Shell input injection |
+| `uri` | CVE-2025-27221 | Userinfo leakage in URI join/merge |
 
 ---
 
-## Integração com CI/CD
+## CI/CD Integration
 
-Adicione ao pipeline para bloquear deploys com vulnerabilidades:
+Add the audit to your pipeline to block deployments when vulnerabilities are detected:
 
 ```yaml
-# Exemplo GitHub Actions
+# GitHub Actions example
 - name: Audit gems
   run: bundle exec bundler-audit check --update
 ```
 
-O comando retorna exit code `1` se encontrar vulnerabilidades, o que interrompe o pipeline automaticamente.
+The command returns exit code `1` if vulnerabilities are found, automatically stopping the pipeline.
 
 ---
 
-## Ciclo completo recomendado
+## Recommended Complete Workflow
 
-```
-1. bundle exec bundler-audit update      # Atualiza banco de advisories
-2. bundle exec bundler-audit check       # Verifica vulnerabilidades
-3. bundle update <gem-vulnerável>        # Atualiza gem a gem (produção)
-4. rails test -v                         # Valida que nada quebrou
-5. bundle exec bundler-audit check       # Confirma que a vulnerabilidade foi corrigida
-6. Repetir até: "No vulnerabilities found"
+```text
+1. bundle exec bundler-audit update      # Update advisory database
+2. bundle exec bundler-audit check       # Check for vulnerabilities
+3. bundle update <vulnerable-gem>        # Update one gem at a time (production)
+4. rails test -v                         # Verify nothing broke
+5. bundle exec bundler-audit check       # Confirm the vulnerability is fixed
+6. Repeat until: "No vulnerabilities found"
 ```
 
 ---
 
-## O que são CVEs e GHSAs?
+## What Are CVEs and GHSAs?
 
-- **CVE** (Common Vulnerabilities and Exposures): identificador global de vulnerabilidades mantido pelo MITRE. Ex.: `CVE-2025-27610`.
-- **GHSA** (GitHub Security Advisory): identificador de vulnerabilidades reportadas via GitHub. Ex.: `GHSA-mrxw-mxhj-p664`.
-- Ambos são rastreados pelo banco de dados do bundler-audit.
+- **CVE** (Common Vulnerabilities and Exposures): a global vulnerability identifier maintained by MITRE. Example: `CVE-2025-27610`.
+- **GHSA** (GitHub Security Advisory): a vulnerability identifier reported through GitHub. Example: `GHSA-mrxw-mxhj-p664`.
+- Both are tracked by the bundler-audit advisory database.
